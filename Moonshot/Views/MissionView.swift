@@ -51,9 +51,11 @@ struct MissionView: View {
                     Text("Mission Highlights")
                         .font(.title)
                         .bold()
+                        .foregroundStyle(.text)
                         .padding(.bottom, 5)
                     
                     Text(mission.description)
+                        .foregroundStyle(.text)
                     
                     Rectangle()
                         .frame(height: 2)
@@ -63,6 +65,7 @@ struct MissionView: View {
                     Text("Crew")
                         .font(.title)
                         .bold()
+                        .foregroundStyle(.text)
                         .padding(.top, 5)
                         .padding(.bottom, 5)
                 }
@@ -82,16 +85,16 @@ struct MissionView: View {
                                         .clipShape(.circle)
                                         .overlay(
                                             Circle()
-                                                .strokeBorder(.white, lineWidth: 1)
+                                                .strokeBorder(.text, lineWidth: 1)
                                         )
                                     
                                     VStack(alignment: .leading) {
                                         Text(crewMember.astronaut.name)
-                                            .foregroundStyle(.white)
+                                            .foregroundStyle(.text)
                                             .font(.headline)
                                         HStack {
                                             Text(crewMember.role)
-                                                .foregroundStyle(.white.opacity(0.5))
+                                                .foregroundStyle(.text.opacity(0.5))
                                             if crewMember.role == "Commander" {
                                                 Image(systemName: "star.circle.fill")
                                                     .foregroundStyle(.yellow)

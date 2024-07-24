@@ -18,8 +18,17 @@ struct AstronautView: View {
                     .resizable()
                     .scaledToFit()
                 
-                Text(astronaut.description)
-                    .padding()
+                VStack(alignment: .leading) {
+                    Text("Bio")
+                        .font(.title)
+                        .bold()
+                        .foregroundStyle(.text)
+                        .padding(.bottom, 5)
+                    
+                    Text(astronaut.description)
+                        .foregroundStyle(.text)
+                }
+                .padding()
             }
         }
         .background(.darkBackround)

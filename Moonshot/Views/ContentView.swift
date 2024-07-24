@@ -35,9 +35,9 @@ struct ContentView: View {
                                 VStack {
                                     Text(mission.displayName)
                                         .font(.headline)
-                                        .foregroundStyle(.white)
+                                        .foregroundStyle(.text)
                                     Text(mission.formattedLaunchDate)
-                                        .foregroundStyle(.white.opacity(0.5))
+                                        .foregroundStyle(.text.opacity(0.5))
                                 }
                                 .padding(.vertical)
                                 .frame(maxWidth: .infinity)
