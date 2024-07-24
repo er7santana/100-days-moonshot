@@ -13,11 +13,6 @@ struct MissionView: View {
     let mission: Mission
     let crew: [CrewMember]
     
-    struct CrewMember {
-        let role: String
-        let astronaut: Astronaut
-    }
-    
     init(mission: Mission, astronauts: [String: Astronaut]) {
         self.mission = mission
         
@@ -40,6 +35,11 @@ struct MissionView: View {
                         width * 0.6
                     }
                     .padding(.top)
+                
+                Text(mission.formattedLaunchDate)
+                    .padding(.top)
+                    .font(.title3)
+                    .bold()
                 
                 VStack(alignment: .leading) {
                     
@@ -71,42 +71,7 @@ struct MissionView: View {
                 }
                 .padding(.horizontal)
                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(crew, id: \.role) { crewMember in
-                            NavigationLink {
-                                AstronautView(astronaut: crewMember.astronaut)
-                            } label: {
-                                VStack {
-                                    Image(crewMember.astronaut.id)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 104, height: 104)
-                                        .clipShape(.circle)
-                                        .overlay(
-                                            Circle()
-                                                .strokeBorder(.text, lineWidth: 1)
-                                        )
-                                    
-                                    VStack(alignment: .leading) {
-                                        Text(crewMember.astronaut.name)
-                                            .foregroundStyle(.text)
-                                            .font(.headline)
-                                        HStack {
-                                            Text(crewMember.role)
-                                                .foregroundStyle(.text.opacity(0.5))
-                                            if crewMember.role == "Commander" {
-                                                Image(systemName: "star.circle.fill")
-                                                    .foregroundStyle(.yellow)
-                                            }
-                                        }
-                                    }
-                                }
-                                .padding(.horizontal)
-                            }
-                        }
-                    }
-                }
+                CrewView(crew: crew)
             }
             .padding(.bottom)
         }

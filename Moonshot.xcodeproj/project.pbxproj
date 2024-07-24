@@ -15,6 +15,9 @@
 		F801DDB82C509A5E00395330 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F801DDB72C509A5E00395330 /* Color+Theme.swift */; };
 		F801DDBA2C509EB300395330 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F801DDB92C509EB300395330 /* MissionView.swift */; };
 		F801DDBC2C50A96800395330 /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F801DDBB2C50A96800395330 /* AstronautView.swift */; };
+		F85F65382C51BCD900F64833 /* EliezerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85F65372C51BCD900F64833 /* EliezerView.swift */; };
+		F85F653A2C51C15B00F64833 /* CrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85F65392C51C15B00F64833 /* CrewView.swift */; };
+		F85F653C2C51C1B000F64833 /* CreMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85F653B2C51C1B000F64833 /* CreMember.swift */; };
 		F87C347F2C4E70A500676453 /* MoonshotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C347E2C4E70A500676453 /* MoonshotApp.swift */; };
 		F87C34812C4E70A500676453 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C34802C4E70A500676453 /* ContentView.swift */; };
 		F87C34832C4E70A700676453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F87C34822C4E70A700676453 /* Assets.xcassets */; };
@@ -30,6 +33,9 @@
 		F801DDB72C509A5E00395330 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
 		F801DDB92C509EB300395330 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 		F801DDBB2C50A96800395330 /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
+		F85F65372C51BCD900F64833 /* EliezerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EliezerView.swift; sourceTree = "<group>"; };
+		F85F65392C51C15B00F64833 /* CrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewView.swift; sourceTree = "<group>"; };
+		F85F653B2C51C1B000F64833 /* CreMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreMember.swift; sourceTree = "<group>"; };
 		F87C347B2C4E70A500676453 /* Moonshot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moonshot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87C347E2C4E70A500676453 /* MoonshotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonshotApp.swift; sourceTree = "<group>"; };
 		F87C34802C4E70A500676453 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,7 +65,9 @@
 			isa = PBXGroup;
 			children = (
 				F87C34802C4E70A500676453 /* ContentView.swift */,
+				F85F65372C51BCD900F64833 /* EliezerView.swift */,
 				F801DDB92C509EB300395330 /* MissionView.swift */,
+				F85F65392C51C15B00F64833 /* CrewView.swift */,
 				F801DDBB2C50A96800395330 /* AstronautView.swift */,
 			);
 			path = Views;
@@ -70,6 +78,7 @@
 			children = (
 				F801DDB02C50903900395330 /* Astronaut.swift */,
 				F801DDB52C5092F900395330 /* Mission.swift */,
+				F85F653B2C51C1B000F64833 /* CreMember.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,7 +215,10 @@
 				F801DDBA2C509EB300395330 /* MissionView.swift in Sources */,
 				F801DDB12C50903900395330 /* Astronaut.swift in Sources */,
 				F801DDBC2C50A96800395330 /* AstronautView.swift in Sources */,
+				F85F65382C51BCD900F64833 /* EliezerView.swift in Sources */,
+				F85F653C2C51C1B000F64833 /* CreMember.swift in Sources */,
 				F801DDB82C509A5E00395330 /* Color+Theme.swift in Sources */,
+				F85F653A2C51C15B00F64833 /* CrewView.swift in Sources */,
 				F801DDB42C5090C100395330 /* Bundle+Decodable.swift in Sources */,
 				F87C34812C4E70A500676453 /* ContentView.swift in Sources */,
 				F87C347F2C4E70A500676453 /* MoonshotApp.swift in Sources */,
