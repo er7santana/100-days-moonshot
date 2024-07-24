@@ -66,7 +66,9 @@ struct ContentView: View {
                         }
                     }
                 }
+                .listRowBackground(Color.darkBackround)
             }
+            .listStyle(.plain)
         }
     }
     
