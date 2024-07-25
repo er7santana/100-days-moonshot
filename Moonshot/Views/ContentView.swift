@@ -31,9 +31,12 @@ struct ContentView: View {
             .background(.darkBackround)
             .preferredColorScheme(.dark)
             .toolbar {
-                Button(showAsGrid ? "List" : "Grid") {
+                Button(action: {
                     showAsGrid.toggle()
-                }
+                }, label: {
+                    Image(systemName: showAsGrid ? "rectangle.grid.1x2" : "rectangle.grid.2x2")
+                        .foregroundStyle(.text)
+                })
             }
         }
     }
