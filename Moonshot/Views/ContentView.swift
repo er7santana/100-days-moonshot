@@ -22,7 +22,6 @@ struct ContentView: View {
                     GridLayout(astronauts: astronauts,
                                missions: missions)
                 } else {
-                    // Option 2 - Mudar totalmente a forma de apresentar
                     ListLayout(astronauts: astronauts,
                                missions: missions)
                 }
