@@ -11,41 +11,46 @@ struct CrewView: View {
     
     let crew: [CrewMember]
     
+    @State private var path = NavigationPath()
+    
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack {
-                ForEach(crew, id: \.role) { crewMember in
-                    NavigationLink {
-                        AstronautView(astronaut: crewMember.astronaut)
-                    } label: {
-                        VStack {
-                            Image(crewMember.astronaut.id)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 104, height: 104)
-                                .clipShape(.circle)
-                                .overlay(
-                                    Circle()
-                                        .strokeBorder(.text, lineWidth: 1)
-                                )
-                            
-                            VStack(alignment: .leading) {
-                                Text(crewMember.astronaut.name)
-                                    .foregroundStyle(.text)
-                                    .font(.headline)
-                                HStack {
-                                    Text(crewMember.role)
-                                        .foregroundStyle(.text.opacity(0.5))
-                                    if crewMember.role == "Commander" {
-                                        Image(systemName: "star.circle.fill")
-                                            .foregroundStyle(.yellow)
+        NavigationStack(path: $path) {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(crew, id: \.role) { crewMember in
+                        NavigationLink(value: crewMember.astronaut) {
+                            VStack {
+                                Image(crewMember.astronaut.id)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 104, height: 104)
+                                    .clipShape(.circle)
+                                    .overlay(
+                                        Circle()
+                                            .strokeBorder(.text, lineWidth: 1)
+                                    )
+                                
+                                VStack(alignment: .leading) {
+                                    Text(crewMember.astronaut.name)
+                                        .foregroundStyle(.text)
+                                        .font(.headline)
+                                    HStack {
+                                        Text(crewMember.role)
+                                            .foregroundStyle(.text.opacity(0.5))
+                                        if crewMember.role == "Commander" {
+                                            Image(systemName: "star.circle.fill")
+                                                .foregroundStyle(.yellow)
+                                        }
                                     }
                                 }
                             }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
                     }
                 }
+            }
+            .navigationDestination(for: Astronaut.self) { astronaut in
+                AstronautView(astronaut: astronaut)
             }
         }
     }
@@ -63,6 +68,8 @@ struct CrewView: View {
             fatalError("Missing \(member.name)")
         }
     }
-    return CrewView(crew: crew)
-        .preferredColorScheme(.dark)
+    return NavigationView {
+        CrewView(crew: crew)
+            .preferredColorScheme(.dark)
+    }
 }

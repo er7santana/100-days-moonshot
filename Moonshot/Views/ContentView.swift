@@ -14,9 +14,10 @@ struct ContentView: View {
     let missions: [Mission] = Bundle.main.decode("missions.json")
 
     @State private var showAsGrid = true
+    @State private var path = NavigationPath()
     
     var body: some View {
-        NavigationView  {
+        NavigationStack(path: $path) {
             Group {
                 if showAsGrid {
                     GridLayout(astronauts: astronauts,
@@ -37,6 +38,9 @@ struct ContentView: View {
                         .foregroundStyle(.text)
                 })
             }
+            .navigationDestination(for: Mission.self) { mission in
+                MissionView(mission: mission, astronauts: astronauts)
+            }
         }
     }
     
@@ -47,9 +51,7 @@ struct ContentView: View {
         var body: some View {
             List {
                 ForEach(missions) { mission in
-                    NavigationLink {
-                        MissionView(mission: mission, astronauts: astronauts)
-                    } label: {
+                    NavigationLink(value: mission) {
                         HStack {
                             Image(mission.image)
                                 .resizable()
@@ -86,9 +88,7 @@ struct ContentView: View {
             ScrollView {
                 LazyVGrid(columns: columns) {
                     ForEach(missions) { mission in
-                        NavigationLink {
-                            MissionView(mission: mission, astronauts: astronauts)
-                        } label: {
+                        NavigationLink(value: mission) {
                             VStack {
                                 Image(mission.image)
                                     .resizable()
