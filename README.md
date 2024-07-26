@@ -14,7 +14,8 @@ Today you have five topics to work through, in which you’ll learn about contai
 
 ## Screenshots
 
-![1](/screenshots/1.png)
+![home-grid](/screenshots/home-grid.png)
+![home-list](/screenshots/home-list.png)
 ![2](/screenshots/2.png)
 ![3](/screenshots/3.png)
 ![4](/screenshots/4.png)
